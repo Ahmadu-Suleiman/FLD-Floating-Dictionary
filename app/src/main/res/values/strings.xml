@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">FLD Floating Dictionary</string>
+
+    <string name="app_ID">ca-app-pub-5207738458603169~7772410551</string>
+    <string name="native_ad_main_id">ca-app-pub-5207738458603169/4037906026</string>
+
+    <string name="add_or_remove_from_screen">Activate Dictionary</string>
+    <string name="synonyms">Synonyms</string>
+    <string name="definition">Definition</string>
+    <string name="synonyms_note">Synonyms note</string>
+    <string name="search_word">search word…</string>
+
+    <string name="activated">Activated</string>
+    <string name="not_activated">Not Activated</string>
+    <string name="suggestion">Suggestion :</string>
+    <string name="suggestion_message">Lock the app to Overview or Recents to prevent your phone from killing it</string>
+    <string name="speaker">speaker</string>
+    <string name="drag_view">drag view</string>
+    <string name="ad_icon">ad icon</string>
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="credits">Credits</string>
+    <string name="ok">OK</string>
+
+    <string name="policy">https://www.privacypolicies.com/live/3293a2c5-8a38-47f6-b188-55b43f557ae8</string>
+    <string name="credits_text">Dictionary content from https://github.com//ssvivian/WebstersDictionary</string>
+</resources>
