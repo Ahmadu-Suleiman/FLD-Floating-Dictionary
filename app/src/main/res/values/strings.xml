@@ -1,27 +1,102 @@
 <resources>
     <string name="app_name">FLD Floating Dictionary</string>
+    <string name="app_ad_ID">ca-app-pub-8871922765309216~7574049405</string>
 
-    <string name="app_ID">ca-app-pub-5207738458603169~7772410551</string>
-    <string name="native_ad_main_id">ca-app-pub-5207738458603169/4037906026</string>
+    <!--    real ads -->
+    <string name="interstitial_switch">ca-app-pub-8871922765309216/4397221723</string>
+    <string name="interstitial_bookmark">ca-app-pub-8871922765309216/2892568364</string>
+    <string name="native_ad_main">ca-app-pub-8871922765309216/9517686460</string>
+    <string name="native_ad_dictionary">ca-app-pub-8871922765309216/8230720565</string>
+    <string name="native_ad_bookmark">ca-app-pub-8871922765309216/4099903867</string>
+    <string name="app_open_ad">ca-app-pub-8871922765309216/4449531927</string>
 
-    <string name="add_or_remove_from_screen">Activate Dictionary</string>
     <string name="synonyms">Synonyms</string>
     <string name="definition">Definition</string>
-    <string name="synonyms_note">Synonyms note</string>
+    <string name="antonyms">Antonyms</string>
     <string name="search_word">search word…</string>
 
+    <string name="activate">Activate</string>
+    <string name="deactivate">Deactivate</string>
     <string name="activated">Activated</string>
-    <string name="not_activated">Not Activated</string>
-    <string name="suggestion">Suggestion :</string>
-    <string name="suggestion_message">Lock the app to Overview or Recents to prevent your phone from killing it</string>
+    <string name="deactivated">Deactivated</string>
+    <string name="activated_info">Dictionary is activated</string>
+    <string name="not_activated_info">Dictionary is not activated</string>
     <string name="speaker">speaker</string>
     <string name="drag_view">drag view</string>
-    <string name="ad_icon">ad icon</string>
-    <string name="about">About</string>
     <string name="privacy_policy">Privacy policy</string>
     <string name="credits">Credits</string>
-    <string name="ok">OK</string>
 
-    <string name="policy">https://www.privacypolicies.com/live/3293a2c5-8a38-47f6-b188-55b43f557ae8</string>
-    <string name="credits_text">Dictionary content from https://github.com//ssvivian/WebstersDictionary</string>
+    <string name="open_drawer">Open navigation drawer</string>
+    <string name="close_drawer">Close navigation drawer</string>
+
+    <string name="policy">https://www.app-privacy-policy.com/live.php?token=nwI4L9oWUmwHTnrAy4gocNbDBKd76vZC</string>
+    <string name="credits_text">Dictionary content from kaikki.org</string>
+    <string name="long_press_to_copy">- long press to copy in floating mode</string>
+    <string name="about">About</string>
+    <string name="apps">Apps</string>
+    <string name="rate_us">Rate us!</string>
+    <string name="about_info">FLD Floating Dictionary is the most comprehensive android floating dictionary which allows you to quickly look up word meanings and other attributes without having to leave your currently active app!</string>
+    <string name="search_icon">search icon</string>
+    <string name="take_notes_with_subsections">Take notes with subsections!</string>
+    <string name="toggle">toggle</string>
+    <string name="note">note</string>
+    <string name="drawer_image">drawer_image</string>
+    <string name="share">Share</string>
+    <string name="show_fullscreen_dictionary">Show fullscreen dictionary</string>
+    <string name="bookmarks">Bookmarks</string>
+    <string name="share_bookmarks">Share bookmarks</string>
+    <string name="delete_all">Delete all</string>
+    <string name="click_to_activate_the_dictionary">1. click to activate the \n\t dictionary</string>
+    <string name="dictionary_is_activated">2. dictionary is \n\t activated!</string>
+    <string name="click_to_hide_the_dictionary">3. click to hide the \n\t dictionary</string>
+    <string name="click_to_display_the_dictionary">4. click to display the \n\t dictionary</string>
+    <string name="show_tutorial">Show tutorial</string>
+    <string name="night_mode">Day/Night mode</string>
+    <string name="random_word">Random Word:</string>
+    <string name="ad">Ad</string>
+    <string name="hypernyms">Hypernyms</string>
+    <string name="hyponyms">Hyponyms</string>
+    <string name="homophones">Homophones</string>
+    <string name="how_to_use_the_floating_dictionary">How to use the floating dictionary</string>
+    <string name="tutorial_image">tutorial_image</string>
+    <string name="loading">loading…please wait</string>
+    <string name="launch_dictionary">Launch Floating Dictionary</string>
+    <string name="dismiss">dismiss</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
 </resources>

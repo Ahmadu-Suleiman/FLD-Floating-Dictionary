@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="ThemeOverlay.FLDFloatingDictionary.AppWidgetContainer" parent="">
+        <item name="appWidgetBackgroundColor">@color/colorPrimaryDark</item>
+        <item name="appWidgetTextColor">@color/text_color</item>
+    </style>
+</resources>

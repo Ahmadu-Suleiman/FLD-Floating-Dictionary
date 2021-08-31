@@ -1,92 +1,203 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:padding="8dp">
 
     <TextView
         android:id="@+id/textView_word"
         style="@style/BigTextStyle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck"
         tools:text="word" />
+
+    <TextView
+        android:id="@+id/textView_part_of_speech"
+        style="@style/MediumTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:text="pos" />
+
+    <TextView
+        android:id="@+id/textView_plural"
+        style="@style/SmallTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:text="plural" />
+
+    <TextView
+        android:id="@+id/textView_tenses"
+        style="@style/SmallTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:text="tenses" />
+
+    <TextView
+        android:id="@+id/textView_compare"
+        style="@style/SmallTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:text="compare" />
+
+    <TextView
+        style="@style/MediumTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/definition"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView_definitions"
         style="@style/SmallTextStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_definition_heading"
-        tools:text="definitions" />
-
-    <TextView
-        android:id="@+id/textView_part_of_speech"
-        style="@style/SmallTextStyle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_word"
-        tools:text="pos" />
-
-    <TextView
-        android:id="@+id/textView_definition_heading"
-        style="@style/MediumTextStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/definition"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_part_of_speech" />
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck"
+        tools:text="definitions" />
 
     <TextView
         android:id="@+id/textView_synonyms_heading"
         style="@style/MediumTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="@string/synonyms"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_definitions" />
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView_synonyms"
         style="@style/SmallTextStyle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_synonyms_heading"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorLink="@color/text_color"
+        android:textIsSelectable="false"
         tools:text="synonyms" />
 
     <TextView
-        android:id="@+id/textView_synonyms_note_heading"
+        android:id="@+id/textView_antonyms_heading"
         style="@style/MediumTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/synonyms_note"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_synonyms" />
+        android:layout_marginTop="4dp"
+        android:text="@string/antonyms"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
 
     <TextView
-        android:id="@+id/textView_synonyms_note"
+        android:id="@+id/textView_antonyms"
         style="@style/SmallTextStyle"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorLink="@color/text_color"
+        android:textIsSelectable="false"
+        tools:text="@string/antonyms" />
+
+    <TextView
+        android:id="@+id/textView_hypernyms_heading"
+        style="@style/MediumTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/hypernyms"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView_hypernyms"
+        style="@style/SmallTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorLink="@color/text_color"
+        android:textIsSelectable="false"
+        tools:text="@string/hypernyms" />
+
+    <TextView
+        android:id="@+id/textView_hyponyms_heading"
+        style="@style/MediumTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/hyponyms"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView_hyponyms"
+        style="@style/SmallTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorLink="@color/text_color"
+        android:textIsSelectable="false"
+        tools:text="@string/hyponyms" />
+
+    <TextView
+        android:id="@+id/textView_homophones_heading"
+        style="@style/MediumTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/homophones"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textIsSelectable="true"
+        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView_homophones"
+        style="@style/SmallTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColorHighlight="@color/colorPrimaryDark"
+        android:textColorLink="@color/text_color"
+        android:textIsSelectable="false"
+        tools:text="@string/homophones" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_synonyms_note_heading"
-        tools:text="synonyms_note" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorAccent" />
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_activate"
+        android:title="@string/activate"
+        app:actionLayout="@layout/switch_layout" />
+    <item
+        android:id="@+id/night_mode"
+        android:icon="@drawable/ic_night_mode"
+        android:title="@string/night_mode" />
+    <item
+        android:id="@+id/bookmarks"
+        android:icon="@drawable/ic_bookmarks"
+        android:title="@string/bookmarks" />
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_about"
+        android:title="@string/about" />
+    <item
+        android:id="@+id/tutorial"
+        android:icon="@drawable/ic_tutorial"
+        android:title="@string/show_tutorial" />
+    <item
+        android:id="@+id/apps"
+        android:actionLayout="@layout/menu_image_ad"
+        android:icon="@drawable/ic_apps"
+        android:title="@string/apps" />
+    <item
+        android:id="@+id/rate"
+        android:icon="@drawable/ic_rate"
+        android:title="@string/rate_us" />
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/share" />
+</menu>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.DictionaryFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/search_input_view_big"
+                style="@style/EdittextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/curved_background"
+                android:includeFontPadding="false"
+                android:labelFor="@id/search_input_view_big"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/speaker_big"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/speaker"
+                android:src="@drawable/ic_speaker"
+                app:layout_constraintStart_toStartOf="@+id/search_input_view_big"
+                app:layout_constraintTop_toBottomOf="@+id/search_input_view_big"
+                app:tint="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/speaker_whole"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/speaker"
+                android:src="@drawable/ic_play"
+                app:layout_constraintEnd_toStartOf="@+id/bookmark"
+                app:layout_constraintTop_toBottomOf="@+id/search_input_view_big"
+                app:tint="@color/colorAccent" />
+
+            <ImageView
+                android:id="@+id/bookmark"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/speaker"
+                android:src="@drawable/ic_unbookmark"
+                app:layout_constraintEnd_toEndOf="@+id/search_input_view_big"
+                app:layout_constraintTop_toBottomOf="@+id/search_input_view_big" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewpager_big"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:padding="4dp"
+                app:layout_constraintBottom_toTopOf="@id/native_ad_dictionary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/speaker_big" />
+
+            <TextView
+                android:id="@+id/loading_dictionary"
+                style="@style/BigTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/loading"
+                app:layout_constraintBottom_toBottomOf="@+id/viewpager_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/viewpager_big" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/random_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="32dp"
+                android:backgroundTint="@color/colorAccent"
+                android:contentDescription="@string/speaker"
+                android:src="@drawable/ic_random"
+                app:backgroundTint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="@id/viewpager_big"
+                app:layout_constraintEnd_toEndOf="@id/viewpager_big"
+                app:tint="@color/colorPrimary" />
+
+            <com.google.android.ads.nativetemplates.TemplateView
+                android:id="@+id/native_ad_dictionary"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:gnt_template_type="@layout/gnt_small_template_view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

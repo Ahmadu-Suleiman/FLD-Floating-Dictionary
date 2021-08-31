@@ -1,0 +1,12 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.google.android.ads.nativetemplates" >
+4
+5    <uses-sdk android:minSdkVersion="23" />
+5-->C:\Users\Ahmad\Desktop\FILES\My Apps\FLDFloatingDictionary\nativetemplates\src\main\AndroidManifest.xml
+6
+7    <application android:supportsRtl="true" />
+7-->C:\Users\Ahmad\Desktop\FILES\My Apps\FLDFloatingDictionary\nativetemplates\src\main\AndroidManifest.xml:3:5-47
+7-->C:\Users\Ahmad\Desktop\FILES\My Apps\FLDFloatingDictionary\nativetemplates\src\main\AndroidManifest.xml:3:18-44
+8
+9</manifest>

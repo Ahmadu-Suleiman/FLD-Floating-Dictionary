@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_fld_shortcut"
+        android:shortcutId="launch dictionary"
+        android:shortcutLongLabel="@string/launch_dictionary"
+        android:shortcutShortLabel="@string/launch_dictionary">
+
+        <intent
+            android:action="launch"
+            android:targetClass="com.meta4projects.fldfloatingdictionary.activities.MainActivity"
+            android:targetPackage="com.meta4projects.fldfloatingdictionary" />
+    </shortcut>
+</shortcuts>
