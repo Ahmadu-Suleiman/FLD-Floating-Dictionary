@@ -94,12 +94,18 @@ public class MainFragment extends Fragment {
     private void setRandomEntry(View view) {
         TextView textViewLoading = view.findViewById(R.id.textView_loading);
         LinearLayout layoutRandomEntry = view.findViewById(R.id.layout_random_entry);
-        Single.fromCallable(() -> DictionaryDatabase.getINSTANCE(requireContext()).entryWordsDao().getRandomWord()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).doOnSuccess(word -> {
-            Single.fromCallable(() -> DictionaryDatabase.getINSTANCE(requireContext()).entryDao().getAllEntriesForWord(word)).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).doOnSuccess(entries -> EntryUtil.setEntry(entries, layoutRandomEntry, textViewLoading, requireContext())).subscribe();
-            layoutRandomEntry.setOnClickListener(v -> ((MainActivity) requireActivity()).setDictionaryFragment(word));
-            view.findViewById(R.id.textViewFullscreen).setOnClickListener(v -> ((MainActivity) requireActivity()).setDictionaryFragment(word));
-            view.findViewById(R.id.note_layout).setOnClickListener(v -> showTakeNoteApp());
-        }).subscribe();
+        Single.fromCallable(() -> DictionaryDatabase.getINSTANCE(requireContext()).entryWordsDao().getRandomWord()).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread())
+                .doOnSuccess(word -> {
+                    Single.fromCallable(() -> DictionaryDatabase.getINSTANCE(requireContext()).entryDao().getAllEntriesForWord(word))
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .doOnSuccess(entries -> EntryUtil.setEntry(entries, layoutRandomEntry, textViewLoading, requireContext())).doOnError(throwable -> {
+                            }).subscribe();
+                    layoutRandomEntry.setOnClickListener(v -> ((MainActivity) requireActivity()).setDictionaryFragment(word));
+                    view.findViewById(R.id.textViewFullscreen).setOnClickListener(v -> ((MainActivity) requireActivity()).setDictionaryFragment(word));
+                    view.findViewById(R.id.note_layout).setOnClickListener(v -> showTakeNoteApp());
+                }).doOnError(throwable -> {
+                }).subscribe();
     }
 
     private void activateOrDeactivate(boolean activate) {
