@@ -33,6 +33,7 @@
             android:name=".activities.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
+            android:label="FLD Floating Dictionary"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,8 +46,8 @@
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
-                <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="text/plain" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
 
             <meta-data
