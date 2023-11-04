@@ -47,7 +47,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainFragment : Fragment(), CoroutineScope by MainScope() {
-    private var interstitialAd: InterstitialAd? = null
+
+    private var interstitialAdSwitch: InterstitialAd? = null
+    private var interstitialAdDictionary: InterstitialAd? = null
     private var reviewInfo: ReviewInfo? = null
     private lateinit var switchView: RadioGroup
     private lateinit var drawerSwitch: SwitchCompat
@@ -99,11 +101,14 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
             withContext(Dispatchers.Main + Util.coroutineExceptionHandler) {
                 EntryUtil.setEntry(randomEntries, layoutRandomEntry, textViewLoading, requireContext())
                 layoutRandomEntry.setOnClickListener { (requireActivity() as MainActivity).setDictionaryFragment(randomWord) }
-                buttonFullScreen.setOnClickListener { (requireActivity() as MainActivity).setDictionaryFragment("A") }
+                buttonFullScreen.setOnClickListener { if (interstitialAdDictionary != null) interstitialAdDictionary!!.show(requireActivity()) else launchFullscreenDictionary() }
             }
         }
         layoutNote.setOnClickListener { showTakeNoteApp() }
     }
+
+    private fun launchFullscreenDictionary() =
+        (requireActivity() as MainActivity).setDictionaryFragment("A")
 
     private fun activateOrDeactivate(activate: Boolean) {
         if (activate) {
@@ -116,12 +121,14 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
     override fun onResume() {
         super.onResume()
         checkStatus()
-        loadInterstitial()
+        loadInterstitialSwitch()
+        loadInterstitialDictionary()
     }
 
     private fun loadAds(view: View) {
         loadNativeAd(view)
-        loadInterstitial()
+        loadInterstitialSwitch()
+        loadInterstitialDictionary()
     }
 
     private fun loadNativeAd(view: View) {
@@ -138,18 +145,19 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
         adLoader.loadAd(AdRequest.Builder().build())
     }
 
-    private fun loadInterstitial() {
+    private fun loadInterstitialSwitch() {
         val adRequest = AdRequest.Builder().build()
         InterstitialAd.load(requireContext(), getString(R.string.interstitial_switch), adRequest, object :
             InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                interstitialAd = null
-                loadInterstitial()
+                interstitialAdSwitch = null
+                loadInterstitialSwitch()
             }
 
             override fun onAdLoaded(interstitial: InterstitialAd) {
-                interstitialAd = interstitial
-                interstitialAd!!.fullScreenContentCallback = object : FullScreenContentCallback() {
+                interstitialAdSwitch = interstitial
+                interstitialAdSwitch!!.fullScreenContentCallback = object :
+                    FullScreenContentCallback() {
                     override fun onAdDismissedFullScreenContent() {
                         activate()
                     }
@@ -159,7 +167,36 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
                     }
 
                     override fun onAdShowedFullScreenContent() {
-                        interstitialAd = null
+                        interstitialAdSwitch = null
+                    }
+                }
+            }
+        })
+    }
+
+    private fun loadInterstitialDictionary() {
+        val adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(requireContext(), getString(R.string.interstitial_dictionary), adRequest, object :
+            InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                interstitialAdDictionary = null
+                loadInterstitialDictionary()
+            }
+
+            override fun onAdLoaded(interstitial: InterstitialAd) {
+                interstitialAdDictionary = interstitial
+                interstitialAdDictionary!!.fullScreenContentCallback = object :
+                    FullScreenContentCallback() {
+                    override fun onAdDismissedFullScreenContent() {
+                        launchFullscreenDictionary()
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                        launchFullscreenDictionary()
+                    }
+
+                    override fun onAdShowedFullScreenContent() {
+                        interstitialAdDictionary = null
                     }
                 }
             }
@@ -180,11 +217,12 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
     private fun activate() {
         DictionaryService.startDictionaryService(requireContext())
         checkStatus()
-        loadInterstitial()
+        loadInterstitialSwitch()
+        loadInterstitialDictionary()
     }
 
     private fun activateWithAd() {
-        if (interstitialAd != null) interstitialAd!!.show(requireActivity()) else activate()
+        if (interstitialAdSwitch != null) interstitialAdSwitch!!.show(requireActivity()) else activate()
     }
 
     private fun deActivate() {

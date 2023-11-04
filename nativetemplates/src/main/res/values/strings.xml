@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="gnt_ad">Ad</string>
+    <string name="gnt_ad_image">ad image</string>
 </resources>
