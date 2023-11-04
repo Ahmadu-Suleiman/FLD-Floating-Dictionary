@@ -26,3 +26,4 @@ Here are some additional benefits of using FLD Floating Dictionary:
 * It can help you avoid making spelling and grammar mistakes.
 
 If you're looking for a powerful and versatile English dictionary app for your Android device, I highly recommend FLD Floating Dictionary.
+Download here https://play.google.com/store/apps/details?id=com.meta4projects.fldfloatingdictionary
