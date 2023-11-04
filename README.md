@@ -28,8 +28,6 @@ Here are some additional benefits of using FLD Floating Dictionary:
 If you're looking for a powerful and versatile English dictionary app for your Android device, I highly recommend FLD Floating Dictionary.
 Download here https://play.google.com/store/apps/details?id=com.meta4projects.fldfloatingdictionary
 
-![app-mockup-android-screenshot-4-fld-screenshots--1080x1920-1](https://github.com/Ahmadu-Suleiman/FLD-Floating-Dictionary/assets/81268745/4fdebe68-54e9-47ce-9830-adefd4889ecf)
-
-![app-mockup-android-screenshot-4-fld-screenshots--1080x1920-2](https://github.com/Ahmadu-Suleiman/FLD-Floating-Dictionary/assets/81268745/650d1c1b-cf69-4054-9417-019ac488edc3)
-
-![app-mockup-android-screenshot-4-fld-screenshots--1080x1920-3](https://github.com/Ahmadu-Suleiman/FLD-Floating-Dictionary/assets/81268745/bab7ea57-e512-400c-ac90-1384e951add4)
+<img width="300" height="550" alt="Screenshot 2023-11-04 160340" src="https://github.com/Ahmadu-Suleiman/FLD-Floating-Dictionary/assets/81268745/4fdebe68-54e9-47ce-9830-adefd4889ecf">
+<img width="300" height="550" alt="Screenshot 2023-11-04 160340" src="https://github.com/Ahmadu-Suleiman/FLD-Floating-Dictionary/assets/81268745/650d1c1b-cf69-4054-9417-019ac488edc3">
+<img width="300" height="550" alt="Screenshot 2023-11-04 160340" src="https://github.com/Ahmadu-Suleiman/FLD-Floating-Dictionary/assets/81268745/bab7ea57-e512-400c-ac90-1384e951add4">
