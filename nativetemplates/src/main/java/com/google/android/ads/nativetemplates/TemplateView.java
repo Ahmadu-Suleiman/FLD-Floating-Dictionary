@@ -39,11 +39,12 @@ import com.google.android.gms.ads.nativead.NativeAdView;
  */
 public class TemplateView extends FrameLayout {
 
+    private static final String MEDIUM_TEMPLATE = "medium_template";
+    private static final String SMALL_TEMPLATE = "small_template";
     private int templateType;
     private NativeTemplateStyle styles;
     private NativeAd nativeAd;
     private NativeAdView nativeAdView;
-
     private TextView primaryView;
     private TextView secondaryView;
     private RatingBar ratingBar;
@@ -52,9 +53,6 @@ public class TemplateView extends FrameLayout {
     private MediaView mediaView;
     private Button callToActionView;
     private ConstraintLayout background;
-
-    private static final String MEDIUM_TEMPLATE = "medium_template";
-    private static final String SMALL_TEMPLATE = "small_template";
 
     public TemplateView(Context context) {
         super(context);

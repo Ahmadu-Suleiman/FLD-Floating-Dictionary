@@ -219,6 +219,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
         checkStatus()
         loadInterstitialSwitch()
         loadInterstitialDictionary()
+        showShareDialog()
     }
 
     private fun activateWithAd() {
@@ -272,5 +273,14 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
 
     private fun review() {
         reviewInfo?.let { reviewManager.launchReviewFlow(requireActivity(), it) }
+    }
+
+    private fun showShareDialog() {
+        if (Util.shouldShare(requireContext())) {
+            val view = LayoutInflater.from(requireContext()).inflate(R.layout.layout_share, requireActivity().findViewById(R.id.share_dialog), false)
+            val dialogShare = Util.getDialogView(requireContext(), view)
+            view.findViewById<View>(R.id.share_appreciation).setOnClickListener { Util.share(requireContext()) }
+            dialogShare.show()
+        }
     }
 }

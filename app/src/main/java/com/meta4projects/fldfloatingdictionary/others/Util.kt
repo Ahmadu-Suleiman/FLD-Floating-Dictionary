@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ShareCompat
 import androidx.core.content.ContextCompat
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequest
@@ -35,13 +36,15 @@ import java.util.concurrent.TimeUnit
 
 object Util {
 
-    const val TAG: String="FLD TAG"
+    const val TAG: String = "FLD TAG"
     const val WORD_EXTRA = "com.meta4projects.fldfloatingdictionary.others.Word"
     private const val IS_FIRST_TIME = "first_time_running"
+    private const val NUMBER_OF_TIMES_ACTIVATED = "should_share"
+    private const val SHARE_THRESHOLD = 40
     private const val SHARED_PREFERENCE = "shared_pref"
     var isNightMode = false
     var textToSpeech: TextToSpeech? = null
-    val coroutineExceptionHandler = CoroutineExceptionHandler{_, throwable ->
+    val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         throwable.printStackTrace()
     }
 
@@ -89,6 +92,19 @@ object Util {
             editor.apply()
             true
         } else false
+    }
+
+    @JvmStatic
+    fun shouldShare(context: Context): Boolean {
+        val sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCE, Context.MODE_PRIVATE)
+        val numberOfActivated = sharedPreferences.getInt(NUMBER_OF_TIMES_ACTIVATED, 1)
+        val shouldShare = numberOfActivated % SHARE_THRESHOLD == 0
+
+        with(sharedPreferences.edit()) {
+            putInt(NUMBER_OF_TIMES_ACTIVATED, numberOfActivated + 1)
+            apply()
+        }
+        return shouldShare
     }
 
     @JvmStatic
@@ -140,5 +156,11 @@ object Util {
         bundle.putString(WORD_EXTRA, word)
         dictionaryFragment.arguments = bundle
         return dictionaryFragment
+    }
+
+    @JvmStatic
+    fun share(context: Context) {
+        val message = "I'm recommending FLD Floating Dictionary to you. It's the most convenient dictionary i've used http://play.google.com/store/apps/details?id=$context.packageName"
+        ShareCompat.IntentBuilder(context).setType("text/plain").setSubject("FLD Floating Dictionary").setChooserTitle("share using...").setText(message).startChooser()
     }
 }

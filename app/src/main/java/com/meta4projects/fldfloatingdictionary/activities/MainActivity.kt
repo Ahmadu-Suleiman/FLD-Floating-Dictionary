@@ -20,7 +20,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
-import androidx.core.app.ShareCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -54,6 +53,7 @@ import com.meta4projects.fldfloatingdictionary.others.Util.initialiseTTS
 import com.meta4projects.fldfloatingdictionary.others.Util.isFirstTime
 import com.meta4projects.fldfloatingdictionary.others.Util.isNightMode
 import com.meta4projects.fldfloatingdictionary.others.Util.prepareWordWorker
+import com.meta4projects.fldfloatingdictionary.others.Util.share
 import com.meta4projects.fldfloatingdictionary.others.Util.showToast
 import com.meta4projects.fldfloatingdictionary.others.WordSuggestionWork
 import com.meta4projects.fldfloatingdictionary.services.DictionaryService
@@ -110,8 +110,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }, { requestConsentError ->
-            Log.w(Util.TAG, String.format("%s: %s", requestConsentError.errorCode, requestConsentError.message))
-        })
+                                                        Log.w(Util.TAG, String.format("%s: %s", requestConsentError.errorCode, requestConsentError.message))
+                                                    })
 
         if (consentInformation.canRequestAds()) {
             initializeMobileAdsSdk()
@@ -177,7 +177,7 @@ class MainActivity : AppCompatActivity() {
                     if (canDrawOverApps()) activate() else getPermission()
                 }
             } else {
-                if (id == R.id.night_mode) setMode() else if (id == R.id.bookmarks) showBookmark() else if (id == R.id.about) showAboutDialog() else if (id == R.id.tutorial) showTutorial() else if (id == R.id.apps) showApps() else if (id == R.id.rate) rate() else if (id == R.id.share) share()
+                if (id == R.id.night_mode) setMode() else if (id == R.id.bookmarks) showBookmark() else if (id == R.id.about) showAboutDialog() else if (id == R.id.tutorial) showTutorial() else if (id == R.id.apps) showApps() else if (id == R.id.rate) rate() else if (id == R.id.share) share(this)
                 drawerLayout.closeDrawer(GravityCompat.START, true)
             }
             true
@@ -309,11 +309,6 @@ class MainActivity : AppCompatActivity() {
         } catch (e: ActivityNotFoundException) {
             startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("http://play.google.com/store/apps/details?id=$packageName")))
         }
-    }
-
-    private fun share() {
-        val message = "I'm recommending this dictionary to you. It's the most convenient dictionary i've used http://play.google.com/store/apps/details?id=$packageName"
-        ShareCompat.IntentBuilder(this).setType("text/plain").setSubject("FLD Floating Dictionary").setChooserTitle("share using...").setText(message).startChooser()
     }
 
     public override fun onDestroy() {

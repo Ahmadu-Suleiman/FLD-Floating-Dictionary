@@ -22,7 +22,7 @@
             <com.google.android.gms.ads.nativead.MediaView
                 android:id="@+id/media_view"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="0dp"
                 android:layout_margin="@dimen/gnt_no_size"
                 android:layout_marginTop="@dimen/gnt_no_margin"
                 app:layout_constraintBottom_toTopOf="@id/middle"
@@ -155,8 +155,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/ad_notification_view"
                                 app:layout_constraintTop_toTopOf="parent"
-                                tools:ignore="SpeakableTextPresentCheck">
-                            </RatingBar>
+                                tools:ignore="SpeakableTextPresentCheck" />
 
                             <TextView
                                 android:id="@+id/secondary"
@@ -198,18 +197,22 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cta"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="@color/gnt_colorAccent"
+                android:elevation="1dp"
                 android:gravity="center"
                 android:lines="1"
-                android:textColor="@color/gnt_white"
+                android:padding="8dp"
+                android:textColor="@color/gnt_text_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/body" />
-
+                app:layout_constraintTop_toBottomOf="@id/body"
+                tools:text="product" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.gms.ads.nativead.NativeAdView>
 </merge>

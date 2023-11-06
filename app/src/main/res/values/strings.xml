@@ -5,7 +5,7 @@
     <!--    real ads -->
     <string name="interstitial_switch">ca-app-pub-8871922765309216/4397221723</string>
     <string name="interstitial_bookmark">ca-app-pub-8871922765309216/2892568364</string>
-    <string name="interstitial_dictionary">cca-app-pub-8871922765309216/3490997372</string>
+    <string name="interstitial_dictionary">ca-app-pub-8871922765309216/3490997372</string>
     <string name="native_ad_main">ca-app-pub-8871922765309216/9517686460</string>
     <string name="native_ad_dictionary">ca-app-pub-8871922765309216/8230720565</string>
     <string name="native_ad_bookmark">ca-app-pub-8871922765309216/4099903867</string>
@@ -101,4 +101,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="show_random_word">Show Random Word</string>
+    <string name="appreciation_message">Hey there,\n\n As the creator of FLD Floating Dictionary, I am truly grateful that you\'re finding the app valuable. It\'s a project close to my heart, and users like you make every effort worthwhile.\n\n If FLD Floating Dictionary has made a positive impact in your life, I\'d be honored if you could help me spread the word. Recommend it to anyone you think could benefit from its features. Your endorsement holds immense value and can make a significant difference in reaching more users.\n\n Thank you for being a part of the FLD Floating Dictionary community! Together, we can make a meaningful impact in the lives of many.\n\n Warm regards,\n\n Ahmad Suleiman</string>
+    <string name="spread_the_knowledge">Spread the Knowledge!</string>
+    <string name="share_to_friends_and_family">share to friends and family</string>
 </resources>

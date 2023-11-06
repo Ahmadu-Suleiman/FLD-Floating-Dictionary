@@ -10,8 +10,7 @@ import com.meta4projects.fldfloatingdictionary.R
 import com.meta4projects.fldfloatingdictionary.services.DictionaryService
 
 class DictionaryWidget : AppWidgetProvider() {
-    override fun onUpdate(context: Context,
-                          appWidgetManager: AppWidgetManager,
+    override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager,
                           appWidgetIds: IntArray) {
         // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {

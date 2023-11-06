@@ -676,6 +676,7 @@ color gnt_ad_green
 color gnt_colorAccent
 color gnt_gray
 color gnt_test_background_color
+color gnt_text_color
 color gnt_white
 color highlighted_text_material_dark
 color highlighted_text_material_light
@@ -1382,6 +1383,7 @@ string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string gnt_ad
+string gnt_ad_image
 string native_body
 string native_headline
 string native_media_view

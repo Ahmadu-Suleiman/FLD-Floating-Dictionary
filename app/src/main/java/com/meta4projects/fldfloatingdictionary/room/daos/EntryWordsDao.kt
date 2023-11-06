@@ -8,6 +8,7 @@ import androidx.room.Transaction
 abstract class EntryWordsDao {
     @Query("SELECT entry_word FROM entry_words WHERE entry_word LIKE :word || '%' LIMIT 20")
     abstract fun getSimilarEntryWords(word: String?): List<String>
+
     @Query("SELECT (COUNT(*) > 0) AS FOUND FROM entry_words WHERE entry_word = :word LIMIT 1")
     abstract fun wordExist(word: String?): Boolean
 
@@ -16,7 +17,7 @@ abstract class EntryWordsDao {
 
     @Transaction
     open suspend fun getRandomWords(): List<String> {
-     return getEntryWords(getRandomWord())
+        return getEntryWords(getRandomWord())
     }
 
     @Transaction
@@ -32,6 +33,7 @@ abstract class EntryWordsDao {
 
     @Query("SELECT entry_word FROM entry_words WHERE entry_word < :word ORDER BY entry_word DESC LIMIT 50")
     abstract fun getPreviousWords(word: String?): List<String>
+
     @Query("SELECT entry_word FROM entry_words WHERE entry_word > :word ORDER BY entry_word ASC LIMIT 50")
     abstract fun getNextWords(word: String?): List<String>
 }
