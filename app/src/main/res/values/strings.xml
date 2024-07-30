@@ -1,15 +1,5 @@
 <resources>
     <string name="app_name">FLD Floating Dictionary</string>
-    <string name="app_ad_ID">ca-app-pub-8871922765309216~7574049405</string>
-
-    <!--    real ads -->
-    <string name="interstitial_switch">ca-app-pub-8871922765309216/4397221723</string>
-    <string name="interstitial_bookmark">ca-app-pub-8871922765309216/2892568364</string>
-    <string name="interstitial_dictionary">ca-app-pub-8871922765309216/3490997372</string>
-    <string name="native_ad_main">ca-app-pub-8871922765309216/9517686460</string>
-    <string name="native_ad_dictionary">ca-app-pub-8871922765309216/8230720565</string>
-    <string name="native_ad_bookmark">ca-app-pub-8871922765309216/4099903867</string>
-    <string name="app_open_ad">ca-app-pub-8871922765309216/4449531927</string>
 
     <string name="synonyms">Synonyms</string>
     <string name="definition">Definition</string>
